@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication table</title>
+</head>
+<body>
+    <h2>Multiplication table</h2>
+    <script>
+        function generateMultiplicationTable(size) {
+    let table = [];
+
+    for (let i = 1; i <= size; i++) {
+        let row = [];
+        for (let j = 1; j <= size; j++) {
+            row.push(i * j);
+        }
+        table.push(row);
+    }
+
+    return table;
+}
+
+function displayTableInHTML(table) {
+    let html = "<table border='1' style='border-collapse: collapse; width: 100%; text-align: center;'>";
+
+    for (let row of table) {
+        html += "<tr>";
+        for (let cell of row) {
+            html += <td>${cell}</td>;
+        }
+        html += "</tr>";
+    }
+
+    html += "</table>";
+
+    document.body.innerHTML += html;
+}
+
+const size = 20; 
+const multiplicationTable = generateMultiplicationTable(size);
+displayTableInHTML(multiplicationTable);
+
+    </script>
+
+</body>
+</html>
